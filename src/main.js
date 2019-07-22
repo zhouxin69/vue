@@ -9,8 +9,11 @@ import './assets/style/base.less'
 import './assets/fonts/iconfont.css'
 //引入axios请求
 import './api'
+//引入vue-table-with-tree-grid
+import TreeTable from 'vue-table-with-tree-grid'
 
 
+Vue.component('tree-table', TreeTable)
 
 Vue.config.productionTip = false
 
