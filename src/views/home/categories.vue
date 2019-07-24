@@ -47,7 +47,7 @@
         <el-form-item label="父级分类：">
           <!-- options 用来指定数据源 -->
           <!-- props 用来指定配置对象 -->
-          <el-cascader expand-trigger="hover" :options="parentCateList" :props="cascaderProps" v-model="selectedKeys" @change="parentCateChanged" clearable :change-on-select="true">
+          <el-cascader expand-trigger="hover"  :options="parentCateList" :props="cascaderProps" v-model="selectedKeys" @change="parentCateChanged" clearable :change-on-select="true">
           </el-cascader>
         </el-form-item>
       </el-form>
@@ -151,9 +151,7 @@ export default {
     },
     // 获取父级分类的数据列表
     async getParentCateList() {
-      const { data: res } = await this.$http.get('categories', {
-        params: { type: 2 }
-      })
+      const { data: res } = await this.$http.get('categories')
 
       if (res.meta.status !== 200) {
         return this.$message.error('获取父级分类数据失败！')
@@ -185,5 +183,15 @@ export default {
   },
 };
 </script>
-<style>
+
+<style lang="less" scoped>
+.treeTable {
+  margin-top: 15px;
+}
+
+.el-cascader {
+  width: 100%;
+}
+
+
 </style>
