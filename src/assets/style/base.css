@@ -5,3 +5,9 @@ html,
   padding: 0;
   height: 100%;
 }
+.el-cascader-menu {
+  height: 240px;
+}
+.ql-editor {
+  min-height: 300px;
+}
